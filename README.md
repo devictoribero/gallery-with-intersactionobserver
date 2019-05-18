@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project created to know how to use the IntersectionObserver.
 
-## Available Scripts
+Basically, this API receives 2 parameters.
 
-In the project directory, you can run:
+`const observer = new IntersectionObserver(callback, options)`
 
-### `npm start`
+The callback is a function which will be called when the conditions are assertive. On the other hand, options is a configuration object which will be used to determine if the nodes, objects or whatever are intersected or not.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Options
+The options object has 3 parameters.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```javascript
+const configuration = {
+  root: The container where we want to apply to observe,
+  rootMargin: Margin around the root.,
+  threshhold: Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed
+}
+```
 
-### `npm test`
+# Callback
+Is a function which receives 2 parameters. The entries of the observer and the observer.
+```javascript
+function Callback(entries, observer) {
+  // ...
+}
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Usage
+Personally, I've only used the `IntersectionObserver` to lazy-load images but, it can be used as well for a `videoplayer` control, such as pause the autoplay when leaving the viewport, saving things on `sessionStorage` or track information about the user behaviour
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
